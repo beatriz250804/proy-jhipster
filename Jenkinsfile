@@ -9,11 +9,19 @@ pipeline {
         }
 
         stage('Build') {
-            bat 'mvnw clean install'
+            steps {
+                script {
+                    bat 'mvnw clean install'
+                }
+            }
         }
 
         stage('Test') {
-            bat 'mvnw test'
+            steps {
+                script {
+                    bat 'mvnw test'
+                }
+            }
         }
     }
 }
